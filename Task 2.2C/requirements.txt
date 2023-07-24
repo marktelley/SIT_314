@@ -1,0 +1,6 @@
+asyncio
+bleak
+pandas
+google-cloud-bigquery
+pyarrow
+numpy
