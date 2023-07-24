@@ -28,9 +28,9 @@ To use this script:
 
 4. Run the script in your Python environment. 
 
-The script will attempt to connect to the specified BLE device, collect the cycling power data, and store it in a pandas DataFrame. Once the data collection session is over, the DataFrame is written to a CSV file named "Activity_Data.csv".
+The script will attempt to connect to the specified BLE device, collect the cycling power data, and store it in a pandas DataFrame. Once the data collection session is over, the DataFrame is written to a CSV file ("Activity_Data.csv").
 
-Next, the script attempts to connect to a Google BigQuery service using a service account JSON file and uploads the data to a specified BigQuery table.
+Thereafter, the script attempts to connect to Google BigQuery using Google Service Account credentials (JSON file) and uploads the data to a specified BigQuery table.
 
 ## Google BigQuery Setup
 
