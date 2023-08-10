@@ -46,11 +46,11 @@ To run the script:
 ## Notes
 
 1. Ensure that the MongoDB Atlas database connection string in the `cred_tag.txt` file is correct and that the necessary permissions are granted.
-2. Make sure the sensor with `tag_id` of 5 is active and transmitting data.
+2. Make sure the sensor with `tag_id` is set correctly; refer to the prototype script for more details.
 
 ---
 
-## Prototype - ipybn Google Colab Notebook
+## Prototype - Google Colab Notebook
 
 This section provides a brief overview of the Google Colab notebook which was used as a prototype to understand the integration with the wireless tag system. The script focuses on the authorisation process, fetching tag details, beeping a specific tag, and utilising the `wirelesstagpy` package to fetch various metrics from the tags.
 
@@ -93,7 +93,26 @@ This section provides a brief overview of the Google Colab notebook which was us
    - Display the status code for each API request.
    - For the `GetTemperatureStats` API method, process the temperature statistics into a DataFrame and display the first 20 rows.
 
-### Notes
+## Resources:
+### Development Environment
+- **IDE:** PyCharm
+- **IDE (proto):** [Google Colab](https://colab.research.google.com/)
+- **Programming Language:** Python
 
-- This prototype script is a great way to understand the basic functionalities of the wireless tag system and how to integrate it into Python environments.
-- Always ensure that you have the correct credentials and that the wireless tag system is active and online.
+### Hardware
+- **Machine:** Macbook Pro with 16GB RAM and M2 storage
+- **Internet Connection:** [Starlink Satellite](https://www.starlink.com/) + Modem
+- **Connection Type:** WiFi access is provided via Starlink Modem and Ethernet connection.
+
+### Sensor Details
+- **Manufacturer:** [Cao Gadgets LLC](https://fccid.io/ZGW05)
+- **Retailer:** [wirelesstag.net](https://store.wirelesstag.net/) - Trademark of Cao Gadgets LLC
+- **Products:**
+  - **Sensor:** [Wireless Sensor Tag (with Temperature)](https://store.wirelesstag.net/en-au/products/wireless-tag)
+  - **Tag Manager:** [Ethernet Tag Manager](https://store.wirelesstag.net/en-au/products/ethernet-tag-manager)
+
+### Data Access & Storage
+- **API:** [JSON Web Service API](https://wirelesstag.net/apidoc.html)
+- **Database:** MongoDB (Hosted on Atlas)
+- **Database Library:** pymongo
+
