@@ -105,8 +105,8 @@ This section provides a brief overview of the Google Colab notebook which was us
 - **Connection Type:** WiFi access is provided via Starlink Modem and Ethernet connection.
 
 ### Sensor Details
-- **Manufacturer:** (Cao Gadgets LLC)[https://fccid.io/ZGW05]
-- **Retailer:** (Trademark of Cao Gadgets LLC)[wirelesstag.net](https://store.wirelesstag.net/]
+- **Manufacturer:** [https://fccid.io/ZGW05](Cao Gadgets LLC)
+- **Retailer:** [wirelesstag.net](https://store.wirelesstag.net/](Trademark of Cao Gadgets LLC)
 - **Products:**
   - **Sensor:** [Wireless Sensor Tag (with Temperature)](https://store.wirelesstag.net/en-au/products/wireless-tag)
   - **Tag Manager:** [Ethernet Tag Manager](https://store.wirelesstag.net/en-au/products/ethernet-tag-manager)
