@@ -2,6 +2,7 @@ import pymongo
 import time
 import pandas as pd
 import wirelesstagpy
+import matplotlib.pyplot as plt
 
 # Key variable - Name Value for Sensor Record
 NAME_ = "SIT_314_TEST"
@@ -38,7 +39,7 @@ def fetch_sensor_data():
             return update_data
     return None
 
-# GET DATA from Atlas
+# GET DATA from Atlas and return as a list
 def retrieve_sensor_data(atlasDbUrl):
     import pymongo
 
@@ -47,19 +48,31 @@ def retrieve_sensor_data(atlasDbUrl):
     sensor_collection = db['sensors']
     sensor_data = sensor_collection.find_one({"name": NAME_})
 
+    temperature_readings = []
+
     if not sensor_data:
         print("No data found")
         client.close()
-        return
+        return temperature_readings
 
     print("Temperature Readings:")
     if 'sensorData' in sensor_data:
         for reading in sensor_data['sensorData']:
             print(reading['temperature'])
+            temperature_readings.append(reading['temperature'])
     else:
         print("No sensor data in document")
 
     client.close()
+    return temperature_readings
+
+# Plot temperature data
+def plot_temperature_data(temp_data):
+    plt.plot(temp_data)
+    plt.xlabel("Reading Index")
+    plt.ylabel("Temperature (°C)")
+    plt.title("Temperature Readings")
+    plt.show()
 
 
 def main():
@@ -93,7 +106,9 @@ def main():
         time.sleep(180) # Wait 180 seconds before next read.
 
     client.close()
-    retrieve_sensor_data(atlasDbUrl)
+    temperature_data = retrieve_sensor_data(atlasDbUrl)
+    if temperature_data:
+        plot_temperature_data(temperature_data)
 
 
 if __name__ == "__main__":
